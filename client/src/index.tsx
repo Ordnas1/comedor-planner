@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import AppRouter from "./Router";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./assets/style/theme";
 
@@ -13,11 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-        </Routes>
-      </BrowserRouter>
+      <AppRouter>
+        <App />
+      </AppRouter>
     </ThemeProvider>
   </React.StrictMode>
 );

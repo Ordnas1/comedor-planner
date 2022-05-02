@@ -1,15 +1,21 @@
 import React from "react";
-import UnalmLogo from "./components/UnalmLogo";
 import { AppBar, Typography, Box, Drawer, CssBaseline } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
+import UnalmLogo from "./components/UnalmLogo";
 import Toolbar from "./components/BaseToolbar";
-import NavMenu from "./components/layout/NavMenu";
+import NavMenu from "./layout/NavMenu";
+import { GlobalStyles } from "@mui/styled-engine";
 
 const drawerWidth = 300;
+const appGlobalStyles = (
+  <GlobalStyles styles={{ a: { color: "inherit", textDecoration: "none" } }} />
+);
 
 function App() {
   return (
     <Box sx={{ display: "flex" }}>
+      {appGlobalStyles}
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -48,7 +54,7 @@ function App() {
       </Drawer>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        main
+        <Outlet />
       </Box>
     </Box>
   );
