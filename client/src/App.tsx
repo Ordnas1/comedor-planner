@@ -52,7 +52,7 @@ function App() {
         <Toolbar />
         <NavMenu />
       </Drawer>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 3, width: "100%", height: "100vh" }}>
         <Toolbar />
         <Outlet />
       </Box>
